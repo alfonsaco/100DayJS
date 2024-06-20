@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 206, 150);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ESTILOS PARA EL CONTENEDOR */
+.container {
+    background-color: #fff;
+    width: 600px;
+    min-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+    padding: 35px 20px;
+}
+/* Ranges */
+.div-ranges {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.div-ranges > div > div {
+    display: flex;
+    gap: 10px;
+}
+[type="range"] {
+    accent-color: rgb(255, 128, 44);
+}
+/* Botonoes */
+.div-botones {
+    display: flex;
+    justify-content: space-between;
+}
+.div-botones button {
+    background-color: rgb(255, 128, 44);
+    border: 0;
+    border-radius: 5px;
+    padding: 15px 10px;
+    color: #fff;
+    font-weight: bold;
+}
+[type="color"] {
+    border: 0px;
+    background-color: #000;
+    border-radius: 5px;
+    width: 70px;
+    height: 50px;
+}
+button:active {
+    background-color: rgb(214, 103, 28);
+}

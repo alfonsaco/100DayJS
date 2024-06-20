@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilos/estilos.css" type="text/css" >
+    <title>Pixel Art</title>
+</head>
+<body>
+    <div class="container">
+        <div class="div-ranges">
+            <div>
+                <label for="anchuraGrid">Grid Width</label>
+                <div>
+                    <input type="range" name="anchuraGrid" class="anchuraGrid" value="0" maxlength="40">
+                    <p id="contAncho">00</p>
+                </div>
+            </div>
+            <div>
+                <label for="alturaGrid">Grid Height</label>
+                <div>
+                    <input type="range" name="alturaGrid" value="0" max="40">
+                    <p>00</p>
+                </div>
+            </div>
+        </div>
+        <div class="div-botones">
+            <button>CREATE GRID</button>
+            <button>CLEAR GRID</button>
+            <input type="color">
+            <button>ERASE</button>
+            <button>PAINT</button>
+        </div>
+        <div class="div-pintar">
+
+        </div>
+    </div>
+
+    <script src="Script/script.js"></script>
+</body>
+</html>
