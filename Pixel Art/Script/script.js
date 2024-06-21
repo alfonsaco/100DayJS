@@ -33,7 +33,7 @@ const crearGrid=document.getElementById("crear-grid");
 
 // Div donde se insertarán las casillas
 const divPintar=document.getElementById("div-pintar");
-
+// Crear el grid
 crearGrid.addEventListener("click", function() {
     divPintar.innerHTML="";
     divPintar.style.display='grid';
@@ -49,4 +49,48 @@ crearGrid.addEventListener("click", function() {
 const borrarGrid=document.getElementById("borrar-grid");
 borrarGrid.addEventListener("click", function() {
     divPintar.innerHTML="";
+});
+
+
+// Pintar en el grid
+const colores=document.getElementById("input-color");
+/* Variable para definir si se ejecuta la función que veremos a continuacion. Si se hace mousedown (click), se pone en true para que se pueda hacer la función de mousemove,
+que actua como click al arrastrar. Ahora, al hacer mouseup (dejar de clickar el ratón), se pondrá en false otra vez. */
+let arrastrarRaton=false;
+
+const botonPintar=document.getElementById("pintar");
+const botonBorrar=document.getElementById("borrar");
+
+botonPintar.addEventListener("click", function() {
+    divPintar.addEventListener("mousedown", function(event) {
+        if(event.target.classList.contains("pixel")) {
+            event.target.style.backgroundColor=colores.value;
+        }
+        arrastrarRaton=true;
+    });
+    divPintar.addEventListener("mousemove", function(event) {
+        if(arrastrarRaton==true && event.target.classList.contains("pixel")) {
+            event.target.style.backgroundColor=colores.value;
+        }
+    });
+    divPintar.addEventListener("mouseup", function() {
+        arrastrarRaton=false;
+    });
+});
+
+botonBorrar.addEventListener("click", function() {
+    divPintar.addEventListener("mousedown", function(event) {
+        if(event.target.classList.contains("pixel")) {
+            event.target.style.backgroundColor='transparent';
+        }
+        arrastrarRaton=true;
+    });
+    divPintar.addEventListener("mousemove", function(event) {
+        if(arrastrarRaton==true && event.target.classList.contains("pixel")) {
+            event.target.style.backgroundColor='transparent';
+        }
+    });
+    divPintar.addEventListener("mouseup", function() {
+        arrastrarRaton=false;
+    });
 });
