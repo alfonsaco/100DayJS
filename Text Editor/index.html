@@ -9,8 +9,9 @@
 </head>
 <body>
     <main>
+        <!--Botones-->
         <div class="div-botones">
-            <i class="fa-solid fa-bold"></i>
+            <i class="fa-solid fa-bold" id="bold"></i>
             <i class="fa-solid fa-superscript"></i>
             <i class="fa-solid fa-subscript"></i>
             <i class="fa-solid fa-list-ol"></i>
@@ -25,6 +26,7 @@
             <i class="fa-solid fa-align-justify"></i>
             <i class="fa-solid fa-indent"></i>
         </div>
+        <!--Opciones-->
         <div class="div-opciones">
             <i class="fa-solid fa-outdent"></i>
             <select name="titulos" id="">
@@ -32,7 +34,7 @@
                 <option value="h2">H2</option>
                 <option value="h3">H3</option>
                 <option value="h4">H4</option>
-                <option value="h5">H5</option>
+                <option value="h5" selected>H5</option>
                 <option value="h6">H6</option>
             </select>
             <select name="fuentes" id="fuentes">
@@ -47,17 +49,19 @@
                 <option value="tres">3</option>
                 <option value="ocho">8</option>
                 <option value="diez">10</option>
-                <option value="once">12</option>
+                <option value="doce" selected>12</option>
                 <option value="catorce">14</option>
             </select>
             <input type="color" name="colorFuente" id="colorFuente">
             <label for="colorFuente">Font Color</label>
         </div>
-        <div>
+        <!--Color de subrayado-->
+        <div class="div-sub">
             <input type="color" id="colorSubrayado">
             <label for="colorSubrayado">Highlight Color</label>
         </div>
-        <textarea name="areaTexto" id="areaTexto"></textarea>
+        <!--Textarea-->
+        <div contenteditable="true" id="areaTexto"></div>
     </main>
 
     <script src="Script/script.js"></script>
