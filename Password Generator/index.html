@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Estilos/estilos.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Password Generator</title>
 </head>
+
 <body>
     <div class="container">
         <!--Parte del título-->
@@ -30,44 +34,47 @@
                 <input type="range" name="rango-pass" id="rango-pass" max="30" value="1" min="1">
             </div>
             <!--Opciones de contraseña-->
-            <div>
+            <div class="div-inferior-opciones">
                 <p>Pass Settings</p>
                 <div>
                     <div>
-                        <input type="checkbox" id="lowercase">
-                        <label for="lowercase">Lowercase (a-z)</label>
+                        <div>
+                            <input type="checkbox" id="lowercase">
+                            <label for="lowercase">Lowercase (a-z)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="numbers">
+                            <label for="numbers">Numbers (0-9)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="exclude">
+                            <label for="exclude">Exclude Duplicate</label>
+                        </div>
                     </div>
                     <div>
-                        <input type="checkbox" id="numbers">
-                        <label for="numbers">Numbers (0-9)</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="exclude">
-                        <label for="exclude">Exclude Duplicate</label>
+                        <div>
+                            <input type="checkbox" id="uppercase">
+                            <label for="uppercase">Uppercase (A-Z)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="symbols">
+                            <label for="symbols">Symbols (!-$^+)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="include">
+                            <label for="include">Include Spaces</label>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <input type="checkbox" id="uppercase">
-                        <label for="uppercase">Uppercase (A-Z)</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="symbols">
-                        <label for="symbols">Symbols (!-$^+)</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="include">
-                        <label for="include">Include Spaces</label>
-                    </div>
-                </div>
-                <!--Botón-->
-                <div>
-                    <button>GENERATE PASSWORD</button>
-                </div>
+            </div>
+            <!--Botón-->
+            <div>
+                <button>GENERATE PASSWORD</button>
             </div>
         </div>
     </div>
 
     <script src="Script/script.js"></script>
 </body>
+
 </html>
