@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilos.css" type="text/css">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <main>
+        <div class="div-opciones">
+            <div>
+                <input type="color">
+                <input type="color" value="#ffffff">
+                <select name="resolucion" id="resolucion">
+                    <option value="x100">100x100</option>
+                    <option value="x200">200x200</option>
+                    <option value="x300">300x300</option>
+                    <option value="x400">400x400</option>
+                    <option value="x500">500x500</option>
+                    <option value="x600">600x600</option>
+                    <option value="x700">700x700</option>
+                    <option value="x800">800x800</option>
+                    <option value="x900">900x900</option>
+                    <option value="x1000">1000x1000</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" value="Enter QR Text">
+            </div>
+        </div>
+        <div class="div-QR">
+            <div class="QR">
+
+            </div>
+        </div>
+        <div class="div-botones">
+            <button>Download
+                <i class="fa-solid fa-download"></i>
+            </button>
+            <button>Share
+                <i class="fa-solid fa-share"></i>
+            </button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
