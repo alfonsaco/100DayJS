@@ -6,6 +6,8 @@ const rangoDificultad=document.querySelector(".rango-dificultad");
 const inputPass=document.getElementById("password");
 const boton=document.querySelector("button");
 const opciones=document.querySelectorAll("[type=\"checkbox\"");
+// Copiar al portapapeles
+const portapapeles=document.querySelector(".fa-copy");
 
 // Función para que esté activada la fácil por defecto
 document.addEventListener("DOMContentLoaded", function() {
@@ -67,7 +69,10 @@ range.addEventListener("input", function() {
 
             }
         }
-        console.log(arrayFinal);
         inputPass.value=cadena;
+
+        portapapeles.addEventListener("click", function() {
+            navigator.clipboard.writeText(inputPass.value);
+        });
     });
 });
