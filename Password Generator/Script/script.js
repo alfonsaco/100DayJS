@@ -55,22 +55,19 @@ range.addEventListener("input", function() {
             arrayFinal=arrayFinal.concat(spaces);
         }
     
+        // Exclude duplicate
+        let repetidos=new Set();
         for (let i=0; i<range.value; i++) {
-            random=Math.round(Math.random()*(arrayFinal.length-1));
-            cadena+=arrayFinal[random];
-            if(opciones[2].checked && i>0) {
-                for (let e=0; e<cadena.length; e++) {
-                    while(cadena.charAt(i)==cadena.charAt(e)) {
-                        random=Math.round(Math.random()*(arrayFinal.length-1));
-                        cadena=cadena.substring(0,cadena.length-1);
-                        cadena+=arrayFinal[random];
-                    }                  
-                }
+            do {
+                random=Math.round(Math.random()*(arrayFinal.length-1));
+            }while(opciones[2].checked && repetidos.has(arrayFinal[random]));
 
-            }
+            cadena+=arrayFinal[random];
+            repetidos.add(arrayFinal[random]);
         }
         inputPass.value=cadena;
 
+        // Copiar el texto al portapapeles
         portapapeles.addEventListener("click", function() {
             navigator.clipboard.writeText(inputPass.value);
         });
