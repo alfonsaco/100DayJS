@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 range.addEventListener("input", function() {
+    // Color de la barra de dificultad
     valorRange.textContent=range.value;
     if(range.value <= 6) {
         rangoDificultad.classList.remove("dificil","medio");
@@ -25,24 +26,34 @@ range.addEventListener("input", function() {
         rangoDificultad.classList.add("dificil");
     }
 
-
-    let cadena='';
-    let arrayFinal=[];
-    let lowercase=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    let random=0;
-
-    if(!opciones[0].hasAttribute("checked")) {
-        arrayFinal=[...lowercase];
-        console.log(arrayFinal);
-    }
-
-    for (let i=0; i<range.value; i++) {
-        random=Math.round(Math.random()*arrayFinal.length);
-        cadena+=arrayFinal[random];
-    }
-
-
+    // Manejador de eventos para crear la contraseña
     boton.addEventListener("click", function() {
+        let cadena='';
+        let arrayFinal=[];
+        let lowercase=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        let numbers=['0','1','2','3','4','5','6','7','8','9'];
+        let uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        let spaces=[' ',' ',' ',' ',' '];
+        let random=0;
+    
+        if(opciones[0].hasAttribute("checked")) {
+            arrayFinal+=[...lowercase];
+        }
+        if(opciones[1].hasAttribute("checked")) {
+            arrayFinal+=[...numbers];
+        }
+        if(opciones[3].hasAttribute("checked")) {
+            arrayFinal+=[...uppercase];
+        }
+        if(opciones[5].hasAttribute("checked")) {
+            arrayFinal+=[...spaces];
+        }
+    
+        for (let i=0; i<range.value; i++) {
+            random=Math.round(Math.random()*arrayFinal.length);
+            cadena+=arrayFinal[random];
+        }
+        console.log(arrayFinal);
         inputPass.value=cadena;
     });
 });
