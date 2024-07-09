@@ -33,25 +33,39 @@ range.addEventListener("input", function() {
         let lowercase=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
         let numbers=['0','1','2','3','4','5','6','7','8','9'];
         let uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        let symbols=['!','-','$','^','+'];
         let spaces=[' ',' ',' ',' ',' '];
         let random=0;
     
-        if(opciones[0].hasAttribute("checked")) {
-            arrayFinal+=[...lowercase];
+        if(opciones[0].checked) {
+            arrayFinal=arrayFinal.concat(lowercase);
         }
-        if(opciones[1].hasAttribute("checked")) {
-            arrayFinal+=[...numbers];
+        if(opciones[1].checked) {
+            arrayFinal=arrayFinal.concat(numbers);
         }
-        if(opciones[3].hasAttribute("checked")) {
-            arrayFinal+=[...uppercase];
+        if(opciones[3].checked) {
+            arrayFinal=arrayFinal.concat(uppercase);
         }
-        if(opciones[5].hasAttribute("checked")) {
-            arrayFinal+=[...spaces];
+        if(opciones[4].checked) {
+            arrayFinal=arrayFinal.concat(symbols);
+        }
+        if(opciones[5].checked) {
+            arrayFinal=arrayFinal.concat(spaces);
         }
     
         for (let i=0; i<range.value; i++) {
-            random=Math.round(Math.random()*arrayFinal.length);
+            random=Math.round(Math.random()*(arrayFinal.length-1));
             cadena+=arrayFinal[random];
+            if(opciones[2].checked && i>0) {
+                for (let e=0; e<cadena.length; e++) {
+                    while(cadena.charAt(i)==cadena.charAt(e)) {
+                        random=Math.round(Math.random()*(arrayFinal.length-1));
+                        cadena=cadena.substring(0,cadena.length-1);
+                        cadena+=arrayFinal[random];
+                    }                  
+                }
+
+            }
         }
         console.log(arrayFinal);
         inputPass.value=cadena;

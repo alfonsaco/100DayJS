@@ -13,6 +13,7 @@ body {
 p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
+    user-select: none;
 }
 
 .container {
@@ -113,6 +114,7 @@ i {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(75, 75, 75);
     margin-left: 5px;
+    user-select: none;
 }
 
 /* Botón final */
@@ -127,4 +129,8 @@ button {
     font-weight: bold;
     margin-top: 10px;
     cursor: pointer;
+    user-select: none;
+}
+button:active {
+    background-color: #92352e;
 }
