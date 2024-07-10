@@ -1,0 +1,15 @@
+@media screen and (max-width: 700px) {
+    main {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 300px) {
+    .div-botones {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 200px) {
+    .div-opciones > div:first-child {
+        flex-direction: column;
+    }
+}
