@@ -10,11 +10,12 @@
 </head>
 <body>
     <main>
+        <!--Color y select-->
         <div class="div-opciones">
             <div>
-                <input type="color">
-                <input type="color" value="#ffffff">
-                <select name="resolucion" id="resolucion">
+                <input type="color" value="#000000" class="negro">
+                <input type="color" value="#ffffff" class="blanco">
+                <select name="resolucion" id="resolucion" class="select">
                     <option value="x100">100x100</option>
                     <option value="x200">200x200</option>
                     <option value="x300">300x300</option>
@@ -28,14 +29,16 @@
                 </select>
             </div>
             <div>
-                <input type="text" placeholder="Enter QR Text">
+                <input type="text" placeholder="Enter QR Text" id="texto">
             </div>
         </div>
+        <!--QR-->
         <div class="div-QR">
             <div class="QR">
 
             </div>
         </div>
+        <!--Botones para descargar y compartir-->
         <div class="div-botones">
             <button>Download
                 <i class="fa-solid fa-download"></i>
@@ -45,6 +48,8 @@
             </button>
         </div>
     </main>
+
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
