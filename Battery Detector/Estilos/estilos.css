@@ -26,7 +26,7 @@ main {
 /* PARTE DEL CONTENEDOR DE LA BATERÍA */
 .div-bateria {
     position: relative;
-    right: 60px;
+    right: 40px;
 }
 .container {
     height: 220px;
@@ -42,18 +42,18 @@ main {
 .container > div {
     width: 100%;
     height: 20%;
-    background-color: grey;
+    background-color: transparent;
 }
-.container > div .bateria-baja {
+.container > div.bateria-baja {
     background: linear-gradient(to right, #D5330A, #EB744B);
 }
-.container > div .bateria-mitad {
+.container > div.bateria-mitad {
     background: linear-gradient(to right, #E46511, #E0C54F);
 }
-.container > div .bateria-casi-completa {
+.container > div.bateria-casi-completa {
     background: linear-gradient(to right, #CAAC02, #70B706);
 }
-.container > div .bateria-completa {
+.container > div.bateria-completa {
     background: linear-gradient(to right, #5EB208, #93D44E);
 }
 
@@ -63,7 +63,7 @@ main {
     color: #fff;
     font-family: sans-serif;
     position: relative;
-    top: 30px;
+    top: 40px;
 }
 .div-texto p:first-child {
     font-size: 1.5em;
