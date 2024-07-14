@@ -1,6 +1,3 @@
-// 24 de normal
-// cada 4 letras, 1 más
-
 // Select
 const select=document.querySelector(".select");
 const option=document.getElementsByTagName("option");
@@ -46,22 +43,63 @@ select.addEventListener("change", function() {
         qr.style.width='100%';
         qr.style.height='100%';
     }
-
-
-    console.log(negro.value);
-    console.log(blanco.value);
 });
 
-
+// Crear QR
 texto.addEventListener("input", function() {
     qr.innerHTML='';
 
     new QRCode(qr, {
         text : texto.value,
-        width : 128,
-        height : 128,
+        width : qr.clientWidth,
+        height : qr.clientHeight,
         colorDark : negro.value,
-        colorLigth : blanco.value,
+        colorLight : blanco.value,
         correctLevel : QRCode.CorrectLevel.H
     });
+});
+
+
+// Descargar el código QR
+document.getElementById("descargar").addEventListener("click", function() {
+    const qrCanvas=document.querySelector(".QR canvas");
+
+    if(qrCanvas) {
+        // Obtenemos su URL en Base64
+        const linkBase64=qrCanvas.toDataURL("image/png");
+
+        const enlaceDescarga=document.createElement("a");
+        enlaceDescarga.href=linkBase64;
+        enlaceDescarga.download="CodigoQR.png";
+
+        // Creamos el elemento y clickamos en él
+        document.body.appendChild(enlaceDescarga);
+        enlaceDescarga.click();
+        document.body.removeChild(enlaceDescarga);
+    }
+}); 
+
+
+// Compartir el QR
+document.getElementById("compartir").addEventListener("click", function() {
+    const qrCanvas=document.querySelector(".QR canvas");
+
+    if(qrCanvas) {
+        // Creamos una función blob asíncrona
+        qrCanvas.toBlob(async function(blob) {
+            const archivo=new File([blob], "CodigoQR.png", {type: "image/png"});
+            // Comprobamos si el navegador puede verificar o no
+            if(navigator.canShare && navigator.canShare({files: [archivo]})) {
+                try {
+                    await navigator.share({
+                        files: [archivo],
+                        title: "Codigo QR",
+                        description: "Este es el código generado"
+                    })
+                } catch (error) {
+                    console.error("Error al compartir", error);
+                }
+            }
+        })
+    }
 });
