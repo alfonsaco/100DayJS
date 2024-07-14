@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #0c0c0c;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TARJETA CENTRAL */
+main {
+    background-color: #313131;
+    width: 400px;
+    height: 320px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* PARTE DEL CONTENEDOR DE LA BATERÍA */
+.div-bateria {
+    position: relative;
+    right: 60px;
+}
+.container {
+    height: 220px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: grey;
+    background: radial-gradient(rgba(45,44,44,1), rgb(78, 73, 71));
+    border: #484442 solid 3px;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+}
+.container > div {
+    width: 100%;
+    height: 20%;
+    background-color: grey;
+}
+.container > div .bateria-baja {
+    background: linear-gradient(to right, #D5330A, #EB744B);
+}
+.container > div .bateria-mitad {
+    background: linear-gradient(to right, #E46511, #E0C54F);
+}
+.container > div .bateria-casi-completa {
+    background: linear-gradient(to right, #CAAC02, #70B706);
+}
+.container > div .bateria-completa {
+    background: linear-gradient(to right, #5EB208, #93D44E);
+}
+
+
+/* ESTILOS DE LA PARTE DEL TEXTO */
+.div-texto {
+    color: #fff;
+    font-family: sans-serif;
+    position: relative;
+    top: 30px;
+}
+.div-texto p:first-child {
+    font-size: 1.5em;
+}
+.porcentaje {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+.div-texto > div > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.div-texto i {
+    font-size: 1em;
+}
+#low-charge i {
+    color: transparent;
+    background: linear-gradient(to right, #D5330A, #EB744B);
+    background-clip: text;
+    filter: drop-shadow(0px 0px 2px #EB744B);
+    animation: fadeInRoja 1.3s ease infinite;
+}
+@keyframes fadeInRoja {
+    from {
+        filter: drop-shadow(0px 0px 2px #EB744B);
+    }
+    50% {
+        filter: none;
+    }
+    to {
+        filter: drop-shadow(0px 0px 2px #EB744B);
+    }
+}
+#charging i {
+    color: transparent;
+    background: linear-gradient(to right, #CAAC02, #70B706);
+    background-clip: text;
+    filter: drop-shadow(0px 0px 2px #70B706);
+    animation: fadeInVerde 1.3s ease infinite;
+}
+@keyframes fadeInVerde {
+    from {
+        filter: drop-shadow(0px 0px 2px #70B706);
+    }
+    50% {
+        filter: none;
+    }
+    to {
+        filter: drop-shadow(0px 0px 2px #70B706);
+    }
+}
+#battery-full i {
+    color: transparent;
+    background: linear-gradient(to right, #5EB208, #93D44E);
+    background-clip: text;
+}
