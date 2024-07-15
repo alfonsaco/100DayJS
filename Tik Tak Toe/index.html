@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Estilos/estilos.css" type="text/css">
     <title>Tik Tak Toe</title>
 </head>
@@ -12,19 +13,26 @@
         <h1><span>2 Player</span><br>Tik Tak Toe</h1>
         <!--Tablero-->
         <div id="container">
-            <div class="no-top no-left"></div>
-            <div class="no-top"></div>
-            <div class="no-top no-right"></div>
-            <div class="no-left"></div>
-            <div></div>
-            <div class="no-right"></div>
-            <div class="no-bottom no-left"></div>
-            <div class="no-bottom"></div>
-            <div class="no-bottom no-right"></div>
+            <div class="no-top no-left" data-pos="0"></div>
+            <div class="no-top" data-pos="1"></div>
+            <div class="no-top no-right" data-pos="2"></div>
+            <div class="no-left" data-pos="3"></div>
+            <div data-pos="4"></div>
+            <div class="no-right" data-pos="5"></div>
+            <div class="no-bottom no-left" data-pos="6"></div>
+            <div class="no-bottom" data-pos="7"></div>
+            <div class="no-bottom no-right" data-pos="8"></div>
         </div>
         <!--Indicador de turno de juego-->
         <h3 class="turno"></h3>
     </main>
+
+    <div class="message">
+        <p>H</p>
+        <button id="reset">
+            <i class="fa fa-refresh"></i>
+        </button>
+    </div>
 
     <script src="Script/script.js"></script>
 </body>
